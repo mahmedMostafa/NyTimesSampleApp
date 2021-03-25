@@ -1,6 +1,8 @@
 package com.assessment.nytimessampleapp.features.main
 
+import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -15,10 +17,16 @@ import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
 class MainViewModel @ViewModelInject constructor(
-    private val repository: MainHomeRepository
+    private val repository: MainHomeRepository,
+    private @Assisted val state: SavedStateHandle
 ) : ViewModel() {
 
-    private var daysCountFlow = MutableStateFlow(DaysCount.ONE_DAY)
+    private var daysCountFlow =
+        MutableStateFlow(state.get<DaysCount>("days_count") ?: DaysCount.ONE_DAY)
+        set(value) {
+            state["days_count"] = value
+            field = value
+        }
 
     val latestNewsFlow = combine(
         daysCountFlow
