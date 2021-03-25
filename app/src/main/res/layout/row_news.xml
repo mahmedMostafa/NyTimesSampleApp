@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_spacing_x0_8">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/news_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_title_text_view"
+        style="@style/PrimaryTextStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/default_spacing_x0_8"
+        android:layout_marginEnd="@dimen/default_spacing_x0_8"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toEndOf="@id/news_image_view"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="this is just the title of the news article" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_body_text_view"
+        style="@style/SecondaryTextStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/default_spacing_x0_8"
+        android:layout_marginTop="@dimen/default_spacing_x0_4"
+        android:layout_marginEnd="@dimen/default_spacing_x0_8"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toEndOf="@id/news_image_view"
+        app:layout_constraintTop_toBottomOf="@id/news_title_text_view"
+        tools:text="this is just the body of the news article" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_writer_text_view"
+        style="@style/SecondaryTextStyle"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/default_spacing_x0_8"
+        android:layout_marginTop="@dimen/default_spacing_x0_4"
+        android:layout_marginEnd="@dimen/default_spacing_x0_8"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toStartOf="@id/news_date_text_view"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/news_image_view"
+        app:layout_constraintTop_toBottomOf="@id/news_body_text_view"
+        tools:text="Mohamed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/news_date_text_view"
+        style="@style/SecondaryTextStyle"
+        android:layout_marginEnd="@dimen/default_spacing_x0_8"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
+        android:drawablePadding="@dimen/default_spacing_x0_4"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/news_writer_text_view"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toEndOf="@id/news_writer_text_view"
+        app:layout_constraintTop_toTopOf="@id/news_writer_text_view"
+        tools:text="24-10-2020" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="@dimen/default_spacing"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

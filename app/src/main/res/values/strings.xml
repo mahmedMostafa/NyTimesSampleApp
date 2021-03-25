@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NyTimesSampleApp</string>
+
+    <!--Error-->
+    <string name="error_network">لا يوجد اتصال بالانترنت</string>
+    <string name="error_timeout">تم نفذ الوقت قم بالحاولة وقت في اخر</string>
+    <string name="error_unauthorized">Invalid Email or Password</string>
+    <string name="error_service_unavailable">يوجد بطئ في تحميل الطلب</string>
+    <string name="error_server_down">يوجد مشكلة في السيرفر يرجي المحاولة في وقت اخر</string>
+    <string name="error_unknown">خطأ غير معروف</string>
+    <string name="error_not_found">طلب غير موجود</string>
+    <string name="error_something_wrong">حدث خطأ ما</string>
+    <string name="error_server_error">خطأ في السيرفر</string>
+    <string name="wrong_email_or_password">البريد الالكتروني او كلمة المرور غير صحيحة</string>
+    <string name="retry">اعادة المحاولة</string>
+    <string name="_1_day">1 day</string>
+    <string name="_7_days">7 days</string>
+    <string name="_30_days">30 days</string>
+</resources>
