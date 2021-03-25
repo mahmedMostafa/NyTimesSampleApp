@@ -24,7 +24,6 @@ import org.junit.runner.RunWith
 @MediumTest
 class DetailActivityTest {
 
-
     @Test
     fun testPassedTitleAndBody_areDisplayed() {
 

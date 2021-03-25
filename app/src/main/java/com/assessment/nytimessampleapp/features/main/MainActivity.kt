@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun subscribeToObservers() {
-        viewModel.latestNewsFlow.asLiveData().observe(this, Observer { resource ->
+        viewModel.latestNews.observe(this, Observer { resource ->
             Timber.d("The current state is $resource")
             when (resource) {
                 is Resource.Loading -> {

@@ -26,6 +26,8 @@ class MainViewModel @ViewModelInject constructor(
         repository.getLatestNews(getNoOfDays(it.first()))
     }
 
+    val latestNews = latestNewsFlow.asLiveData()
+
     fun getLatestNews(count: DaysCount) = viewModelScope.launch {
         daysCountFlow.emit(count)
     }

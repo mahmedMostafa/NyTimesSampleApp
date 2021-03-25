@@ -21,8 +21,7 @@ import org.junit.Test
 class MainViewModelTest {
 
     @get:Rule
-    val testCoroutineRule =
-        TestCoroutineRule()
+    val testCoroutineRule = TestCoroutineRule()
 
     private lateinit var viewModel: MainViewModel
     private lateinit var fakeRepository: MainHomeRepository

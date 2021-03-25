@@ -1,0 +1,103 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2021 The New York Times Company.  All Rights Reserved.",
+  "num_results": 20,
+  "results": [
+    {
+      "uri": "nyt://article/a0bf8cb3-ba3b-5c14-8c8e-857907b5c624",
+      "url": "https://www.nytimes.com/2021/03/02/books/dr-seuss-mulberry-street.html",
+      "id": 100000007631710,
+      "asset_id": 100000007631710,
+      "source": "New York Times",
+      "published_date": "2021-03-02",
+      "updated": "2021-03-04 06:59:13",
+      "section": "Books",
+      "subsection": "",
+      "nytdsection": "books",
+      "adx_keywords": "Books and Literature;Cartoons and Cartoonists;Discrimination;Race and Ethnicity;Geisel, Theodor Seuss;Dr Seuss Enterprises;PM (Newspaper);United States",
+      "column": null,
+      "byline": "By Jenny Gross",
+      "type": "Article",
+      "title": "6 Dr. Seuss Books Will No Longer Be Published Over Offensive Images",
+      "abstract": "The company that oversees the children’s author’s estate said that the titles contained depictions of groups that were “hurtful and wrong.”",
+      "des_facet": [
+        "Books and Literature",
+        "Cartoons and Cartoonists",
+        "Discrimination",
+        "Race and Ethnicity"
+      ],
+      "org_facet": [
+        "Dr Seuss Enterprises",
+        "PM (Newspaper)"
+      ],
+      "per_facet": [
+        "Geisel, Theodor Seuss"
+      ],
+      "geo_facet": [
+        "United States"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "“And to Think That I Saw It on Mulberry Street” is one of six books by Dr. Seuss that will no longer be published.",
+          "copyright": "Steven Senne/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2021/03/02/multimedia/02xp-drseuss/02xp-drseuss-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2021/03/02/multimedia/02xp-drseuss/merlin_184463211_6e161eb5-c2a6-4af7-89ac-7427e48f975e-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2021/03/02/multimedia/02xp-drseuss/merlin_184463211_6e161eb5-c2a6-4af7-89ac-7427e48f975e-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/859e4ab9-4590-5b8f-a528-82c07b061954",
+      "url": "https://www.nytimes.com/2021/02/24/opinion/covid-icu-nurses-arizona.html",
+      "id": 100000007607062,
+      "asset_id": 100000007607062,
+      "source": "New York Times",
+      "published_date": "2021-02-24",
+      "updated": "2021-03-09 13:35:12",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Coronavirus (2019-nCoV);Deaths (Fatalities);Nursing and Nurses;Hospitals;Phoenix (Ariz);United States",
+      "column": null,
+      "byline": "",
+      "type": "Article",
+      "title": "Death, Through a Nurse’s Eyes",
+      "abstract": "A short film offering a firsthand perspective of the brutality of the pandemic inside a Covid-19 I.C.U.",
+      "des_facet": [
+        "Coronavirus (2019-nCoV)",
+        "Deaths (Fatalities)",
+        "Nursing and Nurses",
+        "Hospitals"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": [
+        "Phoenix (Ariz)",
+        "United States"
+      ],
+      "media": [],
+      "eta_id": 0
+    }
+  ]
+}
