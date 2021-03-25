@@ -10,6 +10,7 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import androidx.test.filters.MediumTest
 import com.assessment.nytimessampleapp.R
 import com.assessment.nytimessampleapp.data.UiFakeMainRepository
 import com.assessment.nytimessampleapp.repositories.MainHomeRepository
@@ -31,7 +32,7 @@ import org.junit.runner.RunWith
 
 @ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
-@LargeTest
+@MediumTest
 class MainActivityTest {
 
     @get:Rule
