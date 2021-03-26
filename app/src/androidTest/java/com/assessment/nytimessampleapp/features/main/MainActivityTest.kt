@@ -9,11 +9,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.filters.LargeTest
 import androidx.test.filters.MediumTest
 import com.assessment.nytimessampleapp.R
 import com.assessment.nytimessampleapp.data.UiFakeMainRepository
-import com.assessment.nytimessampleapp.repositories.MainHomeRepository
+import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
 import com.assessment.nytimessampleapp.utils.DaysCount
 import com.assessment.nytimessampleapp.utils.MainCoroutineRule
 import com.assessment.nytimessampleapp.utils.onLoading

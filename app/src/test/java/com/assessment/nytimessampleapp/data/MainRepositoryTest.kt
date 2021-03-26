@@ -1,6 +1,8 @@
-package com.assessment.nytimessampleapp.repositories
+package com.assessment.nytimessampleapp.data
 
 import com.assessment.nytimessampleapp.R
+import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
+import com.assessment.nytimessampleapp.data.repositories.MainRepository
 import com.assessment.nytimessampleapp.utils.TestCoroutineRule
 import com.assessment.nytimessampleapp.models.NewsModel
 import com.assessment.nytimessampleapp.models.NewsResponse
@@ -36,7 +38,10 @@ class MainRepositoryTest {
     @Before
     fun init() {
         apiService = mock<ApiService>(ApiService::class.java)
-        repository = MainRepository(apiService)
+        repository =
+            MainRepository(
+                apiService
+            )
     }
 
     @Test

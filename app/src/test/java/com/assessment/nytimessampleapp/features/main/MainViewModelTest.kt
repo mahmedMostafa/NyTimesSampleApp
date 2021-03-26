@@ -1,9 +1,13 @@
 package com.assessment.nytimessampleapp.features.main
 
+import android.app.Application
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
 import com.assessment.nytimessampleapp.utils.TestCoroutineRule
 import com.assessment.nytimessampleapp.models.NewsModel
 import com.assessment.nytimessampleapp.data.FakeMainRepository
-import com.assessment.nytimessampleapp.repositories.MainHomeRepository
+import com.assessment.nytimessampleapp.data.PreferencesManager
+import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
 import com.assessment.nytimessampleapp.utils.Resource
 import com.assessment.nytimessampleapp.utils.onSuccess
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -16,7 +20,11 @@ import org.hamcrest.Matchers
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.mockito.Mockito
+import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
 @ExperimentalCoroutinesApi
 class MainViewModelTest {
 
@@ -25,12 +33,14 @@ class MainViewModelTest {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var fakeRepository: MainHomeRepository
+    private lateinit var preferencesManager: PreferencesManager
 
     @Before
     fun initViewModel() {
-        fakeRepository =
-            FakeMainRepository()
-        viewModel = MainViewModel(fakeRepository)
+        val applicationMock = Mockito.mock(Application::class.java)
+        preferencesManager = PreferencesManager(applicationMock)
+        fakeRepository = FakeMainRepository()
+        viewModel = MainViewModel(fakeRepository, preferencesManager)
     }
 
     @Test

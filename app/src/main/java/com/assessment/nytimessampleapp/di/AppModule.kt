@@ -2,8 +2,8 @@ package com.assessment.nytimessampleapp.di
 
 import com.assessment.nytimessampleapp.common.BASE_URL
 import com.assessment.nytimessampleapp.remote.ApiService
-import com.assessment.nytimessampleapp.repositories.MainHomeRepository
-import com.assessment.nytimessampleapp.repositories.MainRepository
+import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
+import com.assessment.nytimessampleapp.data.repositories.MainRepository
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -11,10 +11,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)

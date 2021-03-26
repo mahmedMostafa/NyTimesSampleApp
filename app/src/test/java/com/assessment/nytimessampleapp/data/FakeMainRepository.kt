@@ -2,13 +2,12 @@ package com.assessment.nytimessampleapp.data
 
 import com.assessment.nytimessampleapp.R
 import com.assessment.nytimessampleapp.models.NewsModel
-import com.assessment.nytimessampleapp.repositories.MainHomeRepository
+import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
 import com.assessment.nytimessampleapp.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class FakeMainRepository :
-    MainHomeRepository {
+class FakeMainRepository : MainHomeRepository {
 
     private var shoudReturnError: Boolean = false
     private var news = mutableListOf(

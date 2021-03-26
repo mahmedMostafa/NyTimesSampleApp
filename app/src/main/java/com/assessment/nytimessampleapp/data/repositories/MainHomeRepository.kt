@@ -1,4 +1,4 @@
-package com.assessment.nytimessampleapp.repositories
+package com.assessment.nytimessampleapp.data.repositories
 
 import com.assessment.nytimessampleapp.models.NewsModel
 import com.assessment.nytimessampleapp.utils.Resource
