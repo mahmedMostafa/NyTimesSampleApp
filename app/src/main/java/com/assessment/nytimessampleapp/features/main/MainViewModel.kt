@@ -23,10 +23,8 @@ class MainViewModel @ViewModelInject constructor(
 
     private val preferencesFlow = preferencesManager.preferencesFlow
 
-    val latestNewsFlow = combine(
-        preferencesFlow
-    ) { filterPreferences -> filterPreferences }.flatMapLatest { countPreferences ->
-        repository.getLatestNews(getNoOfDays(countPreferences.first()))
+    val latestNewsFlow = preferencesFlow.flatMapLatest { countPreferences ->
+        repository.getLatestNews(getNoOfDays(countPreferences))
     }
 
     val latestNews = latestNewsFlow.asLiveData()

@@ -26,11 +26,8 @@ import java.io.IOException
 @ExperimentalCoroutinesApi
 class MainRepositoryTest {
 
-
     @get:Rule
-    val testCoroutineRule =
-        TestCoroutineRule()
-
+    val testCoroutineRule = TestCoroutineRule()
 
     private lateinit var apiService: ApiService
     private lateinit var repository: MainHomeRepository
