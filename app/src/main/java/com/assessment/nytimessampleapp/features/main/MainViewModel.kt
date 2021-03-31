@@ -34,6 +34,6 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     fun refreshNews() = viewModelScope.launch {
-        preferencesManager.setDayCount(preferencesFlow.first())
+        repository.getLatestNews(7)
     }
 }

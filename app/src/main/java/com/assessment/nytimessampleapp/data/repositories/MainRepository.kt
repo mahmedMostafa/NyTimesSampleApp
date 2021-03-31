@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(
@@ -16,10 +17,12 @@ class MainRepository @Inject constructor(
 ) : MainHomeRepository {
 
     override suspend fun getLatestNews(numOfDays: Int): Flow<Resource<List<NewsModel>>> = flow {
+        Timber.d("GEMY CALLED WITH NUMBER OF DAYS OF $numOfDays")
         emit(Resource.Loading)
         try {
             val result = apiService.getLatestNews(numOfDays)
             if (result.status == "OK") {
+                Timber.d("GEMY CALLED WITH SUCCESS")
                 emit(Resource.Success(result.newsModels ?: emptyList()))
             } else {
                 emit(Resource.Error(R.string.error_something_wrong))

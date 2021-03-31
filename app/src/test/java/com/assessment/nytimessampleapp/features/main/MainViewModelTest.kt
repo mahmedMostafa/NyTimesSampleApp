@@ -3,16 +3,17 @@ package com.assessment.nytimessampleapp.features.main
 import android.app.Application
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.assessment.nytimessampleapp.utils.TestCoroutineRule
 import com.assessment.nytimessampleapp.models.NewsModel
 import com.assessment.nytimessampleapp.data.FakeMainRepository
 import com.assessment.nytimessampleapp.data.PreferencesManager
 import com.assessment.nytimessampleapp.data.repositories.MainHomeRepository
-import com.assessment.nytimessampleapp.utils.Resource
-import com.assessment.nytimessampleapp.utils.onSuccess
+import com.assessment.nytimessampleapp.utils.*
+import com.nhaarman.mockitokotlin2.whenever
+import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
@@ -37,8 +38,7 @@ class MainViewModelTest {
 
     @Before
     fun initViewModel() {
-        val applicationMock = Mockito.mock(Application::class.java)
-        preferencesManager = PreferencesManager(applicationMock)
+        preferencesManager = Mockito.mock(PreferencesManager::class.java)
         fakeRepository = FakeMainRepository()
         viewModel = MainViewModel(fakeRepository, preferencesManager)
     }
@@ -46,7 +46,12 @@ class MainViewModelTest {
     @Test
     fun `at first the state should be loading and list contains right`() = runBlocking {
         //when
-        val flow = fakeRepository.getLatestNews(1)
+        val dayCountFlow = flow {
+            emit(DaysCount.ONE_DAY)
+        }
+        whenever(preferencesManager.preferencesFlow).thenReturn(dayCountFlow)
+        val flow =
+            fakeRepository.getLatestNews(getNoOfDays(preferencesManager.preferencesFlow.first()))
 
         //Then
         assertThat(flow.first() is Resource.Loading, `is`(true))
@@ -55,5 +60,15 @@ class MainViewModelTest {
                 assertThat(news, Matchers.contains(NewsModel(title = "Title 1")))
             }
         }
+    }
+
+    @Test
+    fun `should return error is verified`() = runBlocking {
+        //Given
+        (fakeRepository as FakeMainRepository).setShouldReturnError(true)
+
+        //When
+        val flow = fakeRepository.getLatestNews(1)
+        assertTrue(flow.first() is Resource.Error)
     }
 }

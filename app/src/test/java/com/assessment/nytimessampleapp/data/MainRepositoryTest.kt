@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.core.Is.`is`
 import org.junit.Assert.assertThat
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -56,7 +57,7 @@ class MainRepositoryTest {
         val flow = repository.getLatestNews(7)
 
         //Then
-        assertThat(flow.first() is Resource.Loading, `is`(true))
+        assertTrue(flow.first() is Resource.Loading)
     }
 
     @Test
@@ -104,7 +105,7 @@ class MainRepositoryTest {
         }
     }
 
-    @Test
+    @Test(expected = IOException::class)
     fun `mocking service throws exception flow emits no internet error`() = runBlocking {
         //Given Mock api service
         apiService.stub {

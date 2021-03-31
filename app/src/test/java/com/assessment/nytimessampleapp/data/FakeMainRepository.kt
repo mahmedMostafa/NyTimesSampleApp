@@ -15,11 +15,15 @@ class FakeMainRepository : MainHomeRepository {
     )
 
     override suspend fun getLatestNews(numOfDays: Int): Flow<Resource<List<NewsModel>>> = flow {
-        emit(Resource.Loading)
-        if (!shoudReturnError) {
-            emit(Resource.Success(news))
-        } else {
+        if (shoudReturnError) {
             emit(Resource.Error(R.string.error_something_wrong))
+        } else {
+            emit(Resource.Loading)
+            if (!shoudReturnError) {
+                emit(Resource.Success(news))
+            } else {
+                emit(Resource.Error(R.string.error_something_wrong))
+            }
         }
     }
 
